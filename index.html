@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mother’s Gift — A gift that quietly becomes ongoing care</title>
+  
+  <!-- Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#FAF8F5',
+            stoneWarm: '#F3EFEA',
+            stoneDark: '#E5DFD6',
+            charcoal: '#1A1715',
+            charcoalSoft: '#2B2724',
+            plum: '#3F1E28',
+            plumLight: '#592D3B',
+            moss: '#343D31',
+            mossLight: '#475243',
+            sandMuted: '#9B9389',
+            borderSubtle: 'rgba(26, 23, 21, 0.08)'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: {
+            tightest: '-0.035em',
+            quiet: '0.04em',
+            spacious: '0.12em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection {
+      background-color: #3F1E28;
+      color: #FAF8F5;
+    }
+    
+    /* Smooth custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D8D1C5;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9B9389;
+    }
+
+    .fade-mask-bottom {
+      mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    }
+
+    .editorial-border {
+      border-color: rgba(26, 23, 21, 0.1);
+    }
+
+    /* Subtle transitions */
+    .hover-lift {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-linen text-charcoal font-sans antialiased selection:bg-plum selection:text-linen">
+
+  <!-- ================= TOP NOTIFICATION / PROMISE TICKER ================= -->
+  <aside class="border-b border-borderSubtle bg-stoneWarm/70 text-charcoal text-xs tracking-spacious uppercase py-2.5 px-6 text-center font-medium">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <span class="hidden md:inline-block text-sandMuted">Postpartum Companion Care</span>
+      <span class="mx-auto md:mx-0">Tangible physical warmth, sustained non-intrusive support.</span>
+      <a href="#how-it-works" class="hidden md:inline-flex items-center gap-1.5 text-plum hover:text-plumLight font-semibold transition-colors">
+        Read the philosophy 
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN EDITORIAL NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 bg-linen/90 backdrop-blur-md border-b border-borderSubtle transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#" class="group flex items-center gap-3">
+        <span class="w-6 h-6 rounded-full border border-charcoal flex items-center justify-center text-[10px] font-serif italic text-charcoal group-hover:bg-plum group-hover:text-linen group-hover:border-plum transition-all duration-300">
+          m
+        </span>
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl tracking-tight text-charcoal font-normal leading-none group-hover:text-plum transition-colors">
+            Mother’s Gift
+          </span>
+          <span class="text-[9px] uppercase tracking-spacious text-sandMuted font-medium pt-1">
+            Physical & Ongoing Care
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-09 text-xs uppercase tracking-spacious font-medium text-charcoalSoft">
+        <a href="#how-it-works" class="hover:text-plum transition-colors">The Ritual</a>
+        <a href="#storyboard" class="hover:text-plum transition-colors">The Experience</a>
+        <a href="#care-balance" class="hover:text-plum transition-colors">Circle Care</a>
+        <a href="#packages" class="hover:text-plum transition-colors">The Collections</a>
+        <a href="#first-week-check" class="hover:text-plum transition-colors flex items-center gap-1.5">
+          First Week Check
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-moss"></span>
+        </a>
+        <a href="#ethics" class="hover:text-plum transition-colors">Dignity & Privacy</a>
+      </nav>
+
+      <!-- Header Action CTAs -->
+      <div class="flex items-center space-x-4">
+        <button onclick="openFirstWeekDrawer()" class="hidden sm:inline-flex text-xs uppercase tracking-quiet font-medium px-4 py-2 border border-charcoal/20 hover:border-charcoal text-charcoal rounded-full transition-all duration-200">
+          Guide for Days 1–7
+        </button>
+        <button onclick="openGiftModal()" class="inline-flex items-center gap-2 bg-plum hover:bg-plumLight text-linen text-xs uppercase tracking-spacious font-medium px-5 py-2.5 rounded-full transition-all duration-300 hover-lift shadow-sm">
+          <span>Send a Gift</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/></svg>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 text-charcoal hover:text-plum focus:outline-none" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Flyout Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden border-b border-borderSubtle bg-stoneWarm px-6 py-6 transition-all">
+      <nav class="flex flex-col space-y-4 text-sm font-medium tracking-quiet uppercase text-charcoal">
+        <a href="#how-it-works" onclick="toggleMobileNav()" class="py-1 hover:text-plum">The Ritual</a>
+        <a href="#storyboard" onclick="toggleMobileNav()" class="py-1 hover:text-plum">The Experience</a>
+        <a href="#care-balance" onclick="toggleMobileNav()" class="py-1 hover:text-plum">Circle Care</a>
+        <a href="#packages" onclick="toggleMobileNav()" class="py-1 hover:text-plum">The Collections</a>
+        <a href="#first-week-check" onclick="toggleMobileNav()" class="py-1 hover:text-plum flex items-center justify-between">
+          First Week Check <span class="text-xs bg-moss/10 text-moss px-2 py-0.5 rounded-full">Editorial Guide</span>
+        </a>
+        <a href="#ethics" onclick="toggleMobileNav()" class="py-1 hover:text-plum">Privacy & Terms</a>
+        <div class="pt-4 border-t border-borderSubtle flex flex-col gap-2">
+          <button onclick="toggleMobileNav(); openGiftModal()" class="w-full text-center bg-plum text-linen py-3 rounded-full text-xs uppercase tracking-spacious">Send a Gift</button>
+          <button onclick="toggleMobileNav(); openFirstWeekDrawer()" class="w-full text-center border border-charcoal/30 text-charcoal py-3 rounded-full text-xs uppercase tracking-spacious">Open First Week Rhythms</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= CINEMATIC EDITORIAL HERO ================= -->
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden border-b border-borderSubtle">
+      <!-- Full Bleed Atmospheric Imagery with Warm Grade -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://www.overstuffedlife.com/wp-content/uploads/2023/05/gift-ideas-for-mom.jpg?auto=format&fit=crop&q=80&w=2000" 
+          alt="Quiet portrait of serene new mother resting in soft warm natural light" 
+          class="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[0.98]"
+        />
+        <!-- Atmospheric Overlays: linen warmth and quiet contrast -->
+        <div class="absolute inset-0 bg-gradient-to-r from-linen via-linen/85 to-transparent lg:w-3/5"></div>
+        <div class="absolute inset-0 bg-charcoal/15 mix-blend-multiply"></div>
+      </div>
+
+      <!-- Hero Editorial Narrative Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 w-full">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 mb-6 border-b border-plum/30 pb-1.5">
+            <span class="w-2 h-2 rounded-full bg-plum"></span>
+            <span class="text-[11px] font-sans uppercase tracking-spacious text-plum font-semibold">
+              The Postpartum Paradigm Shift
+            </span>
+          </div>
+
+          <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] tracking-tight text-charcoal mb-6">
+            A gift that quietly becomes <span class="italic font-light text-plum">ongoing care</span>.
+          </h1>
+
+          <p class="text-charcoalSoft text-lg sm:text-xl font-light leading-relaxed mb-10 max-w-xl">
+            A physical presence arrives at her door—nourishing botanicals, tactile wool, pure sustenance. Behind it stands a companion concierge ready to dissolve the small, crushing weight of early motherhood for weeks to come.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <button onclick="openGiftModal()" class="bg-plum hover:bg-plumLight text-linen px-8 py-4 rounded-full text-xs uppercase tracking-spacious font-medium transition-all duration-300 text-center shadow-lg hover-lift">
+              Begin a Gift Journey
+            </button>
+            <a href="#storyboard" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs uppercase tracking-spacious font-medium text-charcoal hover:bg-stoneWarm/80 border border-charcoal/20 transition-all text-center">
+              Watch The Narrative
+              <svg class="w-3.5 h-3.5 text-sandMuted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+          </div>
+
+          <!-- Micro Proof Bar -->
+          <div class="mt-14 pt-8 border-t border-borderSubtle grid grid-cols-3 gap-6 text-left">
+            <div>
+              <p class="font-serif text-2xl text-charcoal">01</p>
+              <p class="text-xs text-sandMuted uppercase tracking-quiet mt-1 font-medium" style="color: black;">Physical Box Arrives</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl text-charcoal">02</p>
+              <p class="text-xs text-sandMuted uppercase tracking-quiet mt-1 font-medium" style="color: black;">Zero Intrusive Apps</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl text-charcoal">40+</p>
+              <p class="text-xs text-sandMuted uppercase tracking-quiet mt-1 font-medium" style="color: black;">Days of Quiet Relief</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDITORIAL PHILOSOPHY CALLOUT ================= -->
+    <section class="py-20 lg:py-28 px-6 lg:px-12 bg-stoneWarm border-b border-borderSubtle">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-xs font-sans uppercase tracking-spacious text-moss font-semibold block mb-4">
+          Beyond Baby Clothes & Generic Hampers
+        </span>
+        <blockquote class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light italic text-charcoal leading-snug">
+          “When a child is born, the world rushes to hold the baby. Mother’s Gift exists to hold the woman.”
+        </blockquote>
+        <div class="w-12 h-px bg-plum/40 mx-auto my-8"></div>
+        <p class="text-sm sm:text-base text-charcoalSoft font-normal max-w-2xl mx-auto leading-relaxed">
+          Postpartum is not a medical illness to manage with clinical dashboards, nor is it a festival of newborn novelty toys. It is an intimate threshold. Our service pairs sensory physical comfort with invisible, friction-free daily alleviation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS (FOUR-BEAT EDITORIAL FLOW) ================= -->
+    <section id="how-it-works" class="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-24 pb-6 border-b border-borderSubtle">
+        <div>
+          <span class="text-xs font-sans uppercase tracking-spacious text-sandMuted font-semibold">The Anatomy of Care</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mt-2">How Mother’s Gift Unfolds</h2>
+        </div>
+        <p class="text-charcoalSoft max-w-md text-sm sm:text-base mt-4 md:mt-0 font-light">
+          Simple for the giver. Effortless, tender, and deeply dignified for the woman receiving it.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        
+        <!-- Step 1 -->
+        <article class="flex flex-col group">
+          <div class="aspect-[4/5] bg-stoneDark overflow-hidden relative mb-6">
+            <img 
+              src="https://files.cdn.printful.com/o/upload/blog-og-image-upload/ca/cadd0eca3cf2a2a06fb9e67057fa7cb5_l?auto=format&fit=crop&q=80&w=800" 
+              alt="Crafted gift packaging with linen cloth and botanical seal" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter saturate-[0.85]"
+            />
+            <span class="absolute top-4 left-4 bg-linen/90 backdrop-blur-sm text-charcoal text-[11px] font-serif italic px-3 py-1 rounded-full">
+              Phase I
+            </span>
+          </div>
+          <span class="text-xs font-mono uppercase tracking-widest text-sandMuted mb-2">01 / The Thoughtful Gesture</span>
+          <h3 class="font-serif text-2xl text-charcoal mb-2 font-normal">A Circle Gathers</h3>
+          <p class="text-charcoalSoft text-sm leading-relaxed font-light">
+            You or a circle of loved ones commission the gift. You choose the tone, write your words, and leave the logistical heavy lifting entirely to us.
+          </p>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="flex flex-col group">
+          <div class="aspect-[4/5] bg-stoneDark overflow-hidden relative mb-6">
+            <img 
+              src="https://i.etsystatic.com/53960271/r/il/c094c7/7959952612/il_fullxfull.7959952612_ndkf.jpg?auto=format&fit=crop&q=80&w=800" 
+              alt="Hand holding warm ceramic mug, resting on natural table" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter saturate-[0.85]"
+            />
+            <span class="absolute top-4 left-4 bg-linen/90 backdrop-blur-sm text-charcoal text-[11px] font-serif italic px-3 py-1 rounded-full">
+              Phase II
+            </span>
+          </div>
+          <span class="text-xs font-mono uppercase tracking-widest text-sandMuted mb-2">02 / Physical Arrival</span>
+          <h3 class="font-serif text-2xl text-charcoal mb-2 font-normal">A Box for Her Senses</h3>
+          <p class="text-charcoalSoft text-sm leading-relaxed font-light">
+            Arrives when she chooses: warm nourishing broths, soft wool socks, pelvic soothing compresses, and a handwritten invitation to quiet companionship.
+          </p>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="flex flex-col group">
+          <div class="aspect-[4/5] bg-stoneDark overflow-hidden relative mb-6">
+            <img 
+              src="https://www.indy100.com/media-library/mother-s-day-2026-x-gifts-she-ll-actually-want-according-to-social-media.jpg?id=65277858&width=1200&height=1200&coordinates=333%2C0%2C334%2C0?auto=format&fit=crop&q=80&w=800" 
+              alt="Gentle mother resting quietly in bed surrounded by soft sunlight" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter saturate-[0.85]"
+            />
+            <span class="absolute top-4 left-4 bg-linen/90 backdrop-blur-sm text-charcoal text-[11px] font-serif italic px-3 py-1 rounded-full">
+              Phase III
+            </span>
+          </div>
+          <span class="text-xs font-mono uppercase tracking-widest text-sandMuted mb-2">03 / Without Demands</span>
+          <h3 class="font-serif text-2xl text-charcoal mb-2 font-normal">She Sets The Rhythm</h3>
+          <p class="text-charcoalSoft text-sm leading-relaxed font-light">
+            No mandatory forms, accounts, or notifications. A simple text message: “We are here. Would warm meals or night support help this week?”
+          </p>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="flex flex-col group">
+          <div class="aspect-[4/5] bg-stoneDark overflow-hidden relative mb-6">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPgU1iXlFxqNcaXHpxmFrcDvkLCtVvZl6vTBCMP_Swuh30pZClHBQBaoF&s=10?auto=format&fit=crop&q=80&w=800" 
+              alt="Warm sunlight through window, quiet peaceful home environment" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter saturate-[0.85]"
+            />
+            <span class="absolute top-4 left-4 bg-linen/90 backdrop-blur-sm text-charcoal text-[11px] font-serif italic px-3 py-1 rounded-full">
+              Phase IV
+            </span>
+          </div>
+          <span class="text-xs font-mono uppercase tracking-widest text-sandMuted mb-2">04 / Quiet Unburdening</span>
+          <h3 class="font-serif text-2xl text-charcoal mb-2 font-normal">The Weight Lifts</h3>
+          <p class="text-charcoalSoft text-sm leading-relaxed font-light">
+            Whether booking an IBCLC lactation doula, fold-and-wash laundry pickup, or gentle bodywork, the companion handles the coordination. She only rests.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= STORYBOARD HERO ANIMATION / NARRATIVE COMPONENT ================= -->
+    <section id="storyboard" class="bg-charcoal text-linen py-24 lg:py-32 relative overflow-hidden">
+      <!-- Ambient background blur -->
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-plum/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-moss/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        
+        <div class="max-w-2xl mb-16">
+          <span class="text-xs font-sans uppercase tracking-spacious text-sandMuted font-semibold">Storyboard Experience</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-light text-linen mt-2 mb-4">
+            How quiet assistance feels in real life
+          </h2>
+          <p class="text-stoneDark/80 font-light text-sm sm:text-base">
+            Motherhood does not break women through catastrophe; it drains them through an unbroken accumulation of microscopic tasks. Watch how our gentle loop resolves them.
+          </p>
+        </div>
+
+        <!-- Interactive Storyboard Tabs -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Controller List -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <button onclick="setStoryboardFrame(0)" id="sb-btn-0" class="sb-nav-btn w-full text-left p-6 rounded-xl border border-linen/10 bg-linen/5 transition-all text-linen relative">
+              <span class="text-[11px] uppercase tracking-spacious text-sandMuted block mb-1">08:15 AM · Frame 01</span>
+              <h4 class="font-serif text-2xl text-linen font-normal">The Silent Notification</h4>
+              <p class="text-stoneDark/70 text-xs mt-2 font-light leading-relaxed">
+                No loud app alarms. A discrete message from her dedicated concierge: “Broth delivery prepared. Shall we send herbal tonic or clear chicken stock today?”
+              </p>
+              <div class="sb-active-indicator absolute left-0 top-0 bottom-0 w-1 bg-plum rounded-l-xl"></div>
+            </button>
+
+            <button onclick="setStoryboardFrame(1)" id="sb-btn-1" class="sb-nav-btn w-full text-left p-6 rounded-xl border border-transparent hover:border-linen/10 bg-transparent transition-all text-linen/70 hover:text-linen relative">
+              <span class="text-[11px] uppercase tracking-spacious text-sandMuted block mb-1">01:40 PM · Frame 02</span>
+              <h4 class="font-serif text-2xl font-normal">The Invisible Errand</h4>
+              <p class="text-stoneDark/70 text-xs mt-2 font-light leading-relaxed">
+                She replies with just one word: “Stock.” She does not open an app, enter credit card details, or arrange porch pickup. It simply happens.
+              </p>
+              <div class="sb-active-indicator hidden absolute left-0 top-0 bottom-0 w-1 bg-plum rounded-l-xl"></div>
+            </button>
+
+            <button onclick="setStoryboardFrame(2)" id="sb-btn-2" class="sb-nav-btn w-full text-left p-6 rounded-xl border border-transparent hover:border-linen/10 bg-transparent transition-all text-linen/70 hover:text-linen relative">
+              <span class="text-[11px] uppercase tracking-spacious text-sandMuted block mb-1">08:00 PM · Frame 03</span>
+              <h4 class="font-serif text-2xl font-normal">The Weightless Evening</h4>
+              <p class="text-stoneDark/70 text-xs mt-2 font-light leading-relaxed">
+                The hot meal is resting in ceramic heat-pouches. The postpartum herbal sitz bath is drawn. The newborn rests; the mother breathes deeply.
+              </p>
+              <div class="sb-active-indicator hidden absolute left-0 top-0 bottom-0 w-1 bg-plum rounded-l-xl"></div>
+            </button>
+
+          </div>
+
+          <!-- Dynamic Visual Preview Display -->
+          <div class="lg:col-span-7 bg-charcoalSoft/80 border border-linen/10 rounded-2xl p-6 sm:p-10 relative min-h-[460px] flex flex-col justify-between overflow-hidden shadow-2xl">
+            
+            <!-- Frame 0 Content -->
+            <div id="sb-frame-0" class="sb-frame flex flex-col justify-between h-full transition-opacity duration-500">
+              <div class="flex items-center justify-between border-b border-linen/10 pb-4 mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-plum/40 border border-plum flex items-center justify-center text-xs font-serif italic text-linen">m</div>
+                  <div>
+                    <p class="text-xs font-medium text-linen">Elena · Concierge</p>
+                    <p class="text-[10px] text-sandMuted">Direct SMS Line · Zero Logins</p>
+                  </div>
+                </div>
+                <span class="text-[10px] tracking-spacious uppercase text-mossLight bg-moss/20 px-2.5 py-1 rounded-full border border-moss/30">Quiet Active</span>
+              </div>
+
+              <!-- Message simulation bubble -->
+              <div class="space-y-4 my-auto max-w-md">
+                <div class="bg-linen/10 text-linen text-sm p-4 rounded-2xl rounded-tl-sm border border-linen/5 font-light leading-relaxed">
+                  “Good morning Clara. Your postpartum recovery balance has 18 credits remaining. Would you like our herbalist soup to arrive today around 5pm?”
+                </div>
+                <div class="bg-plum text-linen text-sm p-3.5 rounded-2xl rounded-tr-sm self-end ml-auto max-w-xs text-right font-light">
+                  “Yes please. Clear broth if possible.”
+                </div>
+                <div class="bg-linen/10 text-linen/90 text-xs p-3 rounded-2xl rounded-tl-sm border border-linen/5 font-light">
+                  “Scheduled quietly for 4:45pm. We will not ring the bell. You don't need to do anything.”
+                </div>
+              </div>
+
+              <div class="border-t border-linen/10 pt-4 mt-6 flex items-center justify-between text-xs text-sandMuted">
+                <span>Outcome: 0 admin time</span>
+                <span class="italic font-serif text-linen">“I didn’t have to think about dinner for the first time in 12 days.”</span>
+              </div>
+            </div>
+
+            <!-- Frame 1 Content -->
+            <div id="sb-frame-1" class="sb-frame hidden flex flex-col justify-between h-full transition-opacity duration-500">
+              <div class="flex items-center justify-between border-b border-linen/10 pb-4 mb-6">
+                <span class="text-xs uppercase tracking-spacious text-sandMuted">Frictionless Resolution</span>
+                <span class="text-[10px] text-mossLight font-mono">STEP 02 OF 03</span>
+              </div>
+              <div class="my-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl bg-linen/5 border border-linen/10">
+                  <p class="text-[10px] uppercase tracking-spacious text-sandMuted">Traditional App Burden</p>
+                  <p class="font-serif text-lg text-rose-300 line-through mt-2">Browse 40 restaurants</p>
+                  <p class="text-xs text-stoneDark/50 mt-1">Tip drivers, worry about delivery sirens, sodium shock.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-plum/20 border border-plum/30">
+                  <p class="text-[10px] uppercase tracking-spacious text-linen">Mother’s Gift Way</p>
+                  <p class="font-serif text-lg text-linen mt-2">Pre-curated postpartum chef</p>
+                  <p class="text-xs text-stoneDark/80 mt-1">Organic collagen, galactagogue herbs, silence guaranteed.</p>
+                </div>
+              </div>
+              <div class="border-t border-linen/10 pt-4 mt-6 text-xs text-sandMuted">
+                Result: Zero mental tab overload for an already exhausted nervous system.
+              </div>
+            </div>
+
+            <!-- Frame 2 Content -->
+            <div id="sb-frame-2" class="sb-frame hidden flex flex-col justify-between h-full transition-opacity duration-500">
+              <div class="flex items-center justify-between border-b border-linen/10 pb-4 mb-6">
+                <span class="text-xs uppercase tracking-spacious text-sandMuted">The Evening Shift</span>
+                <span class="text-[10px] text-mossLight font-mono">COMPLETE RESTORATION</span>
+              </div>
+              <div class="my-auto text-center py-6">
+                <div class="w-16 h-16 rounded-full bg-moss/20 border border-moss mx-auto flex items-center justify-center text-mossLight mb-4">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h4 class="font-serif text-3xl text-linen font-light">The Mother Exhales</h4>
+                <p class="text-stoneDark/70 text-sm max-w-sm mx-auto mt-2 font-light">
+                  Nutrition delivered. Laundry picked up and returned folded. A certified doula booked for Thursday morning.
+                </p>
+              </div>
+              <div class="border-t border-linen/10 pt-4 mt-6 text-xs text-sandMuted text-right">
+                Balance adapts silently to her changing week.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CARE BALANCE: COLLECTIVE LOVE MADE TANGIBLE ================= -->
+    <section id="care-balance" class="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto border-b border-borderSubtle">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Editorial Philosophy of the "Care Balance" -->
+        <div class="lg:col-span-5">
+          <span class="text-xs font-sans uppercase tracking-spacious text-plum font-semibold block mb-2">
+            Beyond Gift Cards & Awkward Money
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mb-6 leading-tight">
+            Support becomes tangible warmth, not transaction balances.
+          </h2>
+          <p class="text-charcoalSoft text-base font-light leading-relaxed mb-6">
+            When friends and family chip in, new mothers usually receive awkward gift cards or random baby outfits. With Mother’s Gift, contributions transmute into a <strong>Sacred Care Balance</strong>.
+          </p>
+          <p class="text-charcoalSoft text-sm font-light leading-relaxed mb-8">
+            She never looks at dollar amounts or price tags. She sees a visual sanctuary of real, unhurried care units that she can redeem as she wishes.
+          </p>
+
+          <div class="space-y-3 border-l-2 border-plum/30 pl-4 py-1">
+            <p class="text-xs text-sandMuted uppercase tracking-quiet font-medium">Contributed by her community:</p>
+            <p class="text-sm text-charcoal italic font-serif">“From Aunt Sarah, The Design Team, and Her Sister Maya”</p>
+          </div>
+        </div>
+
+        <!-- Right: Tangible Care Elements Composition -->
+        <div class="lg:col-span-7 bg-stoneWarm/60 border border-borderSubtle p-8 sm:p-10 rounded-2xl relative">
+          
+          <div class="flex items-center justify-between pb-6 mb-8 border-b border-borderSubtle">
+            <div>
+              <p class="font-serif text-2xl text-charcoal">Her Care Sanctuary</p>
+              <p class="text-xs text-sandMuted tracking-quiet uppercase font-medium">Available to draw upon anytime</p>
+            </div>
+            <span class="px-3.5 py-1.5 rounded-full bg-linen border border-borderSubtle text-xs font-mono text-moss font-medium">
+              100% Flexible Allocation
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <!-- Tangible Card 1 -->
+            <div class="bg-linen p-5 rounded-xl border border-borderSubtle hover-lift transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-full bg-stoneWarm flex items-center justify-center text-plum font-serif text-sm">01</span>
+                <span class="text-[10px] tracking-spacious uppercase font-semibold text-moss">3 Dinners Claimed</span>
+              </div>
+              <h4 class="font-serif text-lg text-charcoal font-medium">Restorative Bone & Mushroom Broth</h4>
+              <p class="text-xs text-sandMuted mt-1 leading-relaxed">Simmered 24 hours with organic jujube dates and astragalus root.</p>
+            </div>
+
+            <!-- Tangible Card 2 -->
+            <div class="bg-linen p-5 rounded-xl border border-borderSubtle hover-lift transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-full bg-stoneWarm flex items-center justify-center text-plum font-serif text-sm">02</span>
+                <span class="text-[10px] tracking-spacious uppercase font-semibold text-plum">Vetted Pro</span>
+              </div>
+              <h4 class="font-serif text-lg text-charcoal font-medium">In-Home Lactation Consultant</h4>
+              <p class="text-xs text-sandMuted mt-1 leading-relaxed">Compassionate, non-judgmental IBCLC visit right in her living room.</p>
+            </div>
+
+            <!-- Tangible Card 3 -->
+            <div class="bg-linen p-5 rounded-xl border border-borderSubtle hover-lift transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-full bg-stoneWarm flex items-center justify-center text-plum font-serif text-sm">03</span>
+                <span class="text-[10px] tracking-spacious uppercase font-semibold text-moss">Weekly Doorstep</span>
+              </div>
+              <h4 class="font-serif text-lg text-charcoal font-medium">Linen & Wash Pickup</h4>
+              <p class="text-xs text-sandMuted mt-1 leading-relaxed">Bed sheets, burp cloths, and lounge wear returned pristine & organic-scented.</p>
+            </div>
+
+            <!-- Tangible Card 4 -->
+            <div class="bg-linen p-5 rounded-xl border border-borderSubtle hover-lift transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-full bg-stoneWarm flex items-center justify-center text-plum font-serif text-sm">04</span>
+                <span class="text-[10px] tracking-spacious uppercase font-semibold text-charcoalSoft">Rest Hours</span>
+              </div>
+              <h4 class="font-serif text-lg text-charcoal font-medium">Postpartum Night Doula Shift</h4>
+              <p class="text-xs text-sandMuted mt-1 leading-relaxed">Four uninterrupted hours of sleep while a certified caregiver watches baby.</p>
+            </div>
+
+          </div>
+
+          <!-- Bottom Note -->
+          <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center justify-between text-xs text-sandMuted">
+            <span>Any unused element converts to future care seamlessly.</span>
+            <span class="text-plum font-medium">Never expires.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= PACKAGES / CURATED TIERS (WITH EXPANDABLE DETAILS) ================= -->
+    <section id="packages" class="py-24 lg:py-32 px-6 lg:px-12 bg-stoneWarm/40">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+          <span class="text-xs font-sans uppercase tracking-spacious text-sandMuted font-semibold">The Gift Collections</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mt-2 mb-4">
+            Designed for the Depth of Her Healing
+          </h2>
+          <p class="text-charcoalSoft font-light text-sm sm:text-base">
+            Every collection includes an heirloom arrival gift box paired with ongoing, on-demand companion support.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Package 1: The Gentle Beginning -->
+          <div class="bg-linen border border-borderSubtle rounded-2xl p-8 flex flex-col justify-between hover-lift transition-all">
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div>
+                  <span class="text-[11px] font-mono uppercase tracking-widest text-sandMuted">Collection 01</span>
+                  <h3 class="font-serif text-3xl text-charcoal font-normal mt-1">The First Forty</h3>
+                </div>
+                <span class="text-xs px-3 py-1 bg-stoneWarm text-charcoalSoft rounded-full font-medium">2 Weeks Support</span>
+              </div>
+              
+              <p class="text-xs text-charcoalSoft mb-6 font-light leading-relaxed">
+                Ideal for close friends wanting to offer immediate physical warmth and initial recovery buffer.
+              </p>
+
+              <div class="h-px bg-borderSubtle mb-6"></div>
+
+              <!-- Inclusions summary -->
+              <h4 class="text-xs font-semibold uppercase tracking-spacious text-sandMuted mb-4">The Physical Vessel</h4>
+              <ul class="space-y-3 text-xs text-charcoal mb-8">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Merino wool postpartum cocoon wrap
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Herbal pelvic recovery compress & botanicals
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Organic date & sesame replenishment elixir
+                </li>
+              </ul>
+
+              <!-- Expandable Swappable Info -->
+              <div id="pkg-swap-1" class="hidden mb-6 p-4 rounded-xl bg-stoneWarm/60 text-xs text-charcoalSoft space-y-2 border border-borderSubtle">
+                <p class="font-medium text-charcoal">What she can customize upon arrival:</p>
+                <p>• Swap wrap color (Oatmeal / Dark Umber / Sage)</p>
+                <p>• Exchange food elixirs for vegan / allergen-free varieties</p>
+                <p>• Convert companion SMS check-ins to completely silent concierge</p>
+              </div>
+
+              <button onclick="togglePackageDetails('pkg-swap-1', this)" class="text-xs uppercase tracking-quiet font-medium text-plum hover:text-plumLight flex items-center gap-1.5 mb-8">
+                <span>View what she can change</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+            </div>
+
+            <button onclick="openGiftModalWithPackage('The First Forty')" class="w-full py-3.5 rounded-full border border-charcoal/30 text-charcoal hover:bg-charcoal hover:text-linen text-xs uppercase tracking-spacious font-medium transition-all duration-300">
+              Select This Offering
+            </button>
+          </div>
+
+          <!-- Package 2: The Fourth Trimester (Featured) -->
+          <div class="bg-linen border-2 border-plum rounded-2xl p-8 flex flex-col justify-between hover-lift transition-all relative shadow-lg">
+            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-plum text-linen text-[10px] uppercase tracking-widest font-semibold px-4 py-1 rounded-full">
+              Most Chosen By Families
+            </span>
+
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div>
+                  <span class="text-[11px] font-mono uppercase tracking-widest text-plum">Collection 02</span>
+                  <h3 class="font-serif text-3xl text-charcoal font-normal mt-1">The Fourth Trimester</h3>
+                </div>
+                <span class="text-xs px-3 py-1 bg-plum/10 text-plum rounded-full font-medium">6 Weeks Support</span>
+              </div>
+              
+              <p class="text-xs text-charcoalSoft mb-6 font-light leading-relaxed">
+                The comprehensive embrace. Physical restorative tools paired with 6 full weeks of on-call assistance.
+              </p>
+
+              <div class="h-px bg-borderSubtle mb-6"></div>
+
+              <!-- Inclusions summary -->
+              <h4 class="text-xs font-semibold uppercase tracking-spacious text-sandMuted mb-4">The Physical Vessel</h4>
+              <ul class="space-y-3 text-xs text-charcoal mb-8">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Everything in The First Forty
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Glazed stoneware herbal warming mug & thermos
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Lactation & sleep herbal tincture apothecary kit
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  4 Restorative Home Dinners coordination credits
+                </li>
+              </ul>
+
+              <!-- Expandable Swappable Info -->
+              <div id="pkg-swap-2" class="hidden mb-6 p-4 rounded-xl bg-stoneWarm/60 text-xs text-charcoalSoft space-y-2 border border-borderSubtle">
+                <p class="font-medium text-charcoal">What she can customize upon arrival:</p>
+                <p>• Allocate meal credits toward night-nurse or doula shifts</p>
+                <p>• Re-route delivery cadence if birth date shifted</p>
+                <p>• Designate partner or family member as concierge point-of-contact</p>
+              </div>
+
+              <button onclick="togglePackageDetails('pkg-swap-2', this)" class="text-xs uppercase tracking-quiet font-medium text-plum hover:text-plumLight flex items-center gap-1.5 mb-8">
+                <span>View what she can change</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+            </div>
+
+            <button onclick="openGiftModalWithPackage('The Fourth Trimester')" class="w-full py-3.5 rounded-full bg-plum hover:bg-plumLight text-linen text-xs uppercase tracking-spacious font-medium transition-all duration-300 shadow">
+              Select This Offering
+            </button>
+          </div>
+
+          <!-- Package 3: The Village Circle -->
+          <div class="bg-linen border border-borderSubtle rounded-2xl p-8 flex flex-col justify-between hover-lift transition-all">
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div>
+                  <span class="text-[11px] font-mono uppercase tracking-widest text-sandMuted">Collection 03</span>
+                  <h3 class="font-serif text-3xl text-charcoal font-normal mt-1">The Village Circle</h3>
+                </div>
+                <span class="text-xs px-3 py-1 bg-moss/10 text-moss rounded-full font-medium">12 Weeks Collective</span>
+              </div>
+              
+              <p class="text-xs text-charcoalSoft mb-6 font-light leading-relaxed">
+                Created for office teams, families, and communities pooling love for long-tail deep postpartum presence.
+              </p>
+
+              <div class="h-px bg-borderSubtle mb-6"></div>
+
+              <!-- Inclusions summary -->
+              <h4 class="text-xs font-semibold uppercase tracking-spacious text-sandMuted mb-4">The Physical Vessel</h4>
+              <ul class="space-y-3 text-xs text-charcoal mb-8">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Deluxe handcrafted vessel with curated textiles
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Full 12-week concierge companion team
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Lactation consultant (IBCLC) home visits
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-plum"></span>
+                  Housekeeping & laundry relief allocation
+                </li>
+              </ul>
+
+              <!-- Expandable Swappable Info -->
+              <div id="pkg-swap-3" class="hidden mb-6 p-4 rounded-xl bg-stoneWarm/60 text-xs text-charcoalSoft space-y-2 border border-borderSubtle">
+                <p class="font-medium text-charcoal">What she can customize upon arrival:</p>
+                <p>• Distribute credits across full 3 months or condense into week 1–2</p>
+                <p>• Include postpartum mental health counseling voucher</p>
+                <p>• Invite contributors to upload voice audio letters into quiet vault</p>
+              </div>
+
+              <button onclick="togglePackageDetails('pkg-swap-3', this)" class="text-xs uppercase tracking-quiet font-medium text-plum hover:text-plumLight flex items-center gap-1.5 mb-8">
+                <span>View what she can change</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+            </div>
+
+            <button onclick="openGiftModalWithPackage('The Village Circle')" class="w-full py-3.5 rounded-full border border-charcoal/30 text-charcoal hover:bg-charcoal hover:text-linen text-xs uppercase tracking-spacious font-medium transition-all duration-300">
+              Select This Offering
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= DEDICATED EDITORIAL VIEW: FIRST WEEK CHECK ================= -->
+    <section id="first-week-check" class="py-24 lg:py-32 px-6 lg:px-12 max-w-7xl mx-auto border-b border-borderSubtle">
+      <div class="bg-linen border border-borderSubtle rounded-3xl overflow-hidden shadow-sm">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          
+          <!-- Editorial Intro Left -->
+          <div class="lg:col-span-5 p-8 sm:p-12 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-borderSubtle bg-stoneWarm/40">
+            <div>
+              <div class="inline-flex items-center gap-2 mb-4">
+                <span class="w-2 h-2 rounded-full bg-moss"></span>
+                <span class="text-xs uppercase tracking-spacious font-semibold text-moss">The Editorial Protocol</span>
+              </div>
+              <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal leading-tight mb-6">
+                First Week Check
+              </h2>
+              <p class="text-charcoalSoft text-sm sm:text-base font-light leading-relaxed mb-6">
+                The first seven days after birth are a hormonal and physical sea change. There are no milestone charts here, no tracking ounces or tracking guilt.
+              </p>
+              <p class="text-charcoalSoft text-sm font-light leading-relaxed">
+                This is a gentle rhythm check: practical, reassuring notes on pelvic rest, warmth, nutrition, and when to ask the companion to take over.
+              </p>
+            </div>
+
+            <div class="pt-8 mt-8 border-t border-borderSubtle">
+              <span class="text-xs font-mono uppercase tracking-widest text-sandMuted">Curated with Certified Midwives</span>
+            </div>
+          </div>
+
+          <!-- Interactive Tabbed Days Right -->
+          <div class="lg:col-span-7 p-8 sm:p-12">
+            
+            <!-- Day Selectors -->
+            <div class="flex items-center space-x-2 border-b border-borderSubtle pb-4 mb-8 overflow-x-auto">
+              <button onclick="setFirstWeekTab('days-1-2')" id="tab-btn-days-1-2" class="fw-tab-btn px-4 py-2 rounded-full text-xs uppercase tracking-quiet font-medium bg-plum text-linen">
+                Days 1 & 2: The Soft Landing
+              </button>
+              <button onclick="setFirstWeekTab('days-3-4')" id="tab-btn-days-3-4" class="fw-tab-btn px-4 py-2 rounded-full text-xs uppercase tracking-quiet font-medium text-charcoal hover:bg-stoneWarm">
+                Days 3 & 4: The Hormonal Tide
+              </button>
+              <button onclick="setFirstWeekTab('days-5-7')" id="tab-btn-days-5-7" class="fw-tab-btn px-4 py-2 rounded-full text-xs uppercase tracking-quiet font-medium text-charcoal hover:bg-stoneWarm">
+                Days 5 to 7: Finding Footing
+              </button>
+            </div>
+
+            <!-- Tab Content 1 -->
+            <div id="fw-content-days-1-2" class="fw-tab-content space-y-6">
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">01</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">Horizontal Dignity</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    Stay in the bed. Walking around the house to “tidy up” delays pelvic floor vascular healing. Let dust sit. Let guests wait outside.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">02</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">The Warmth Mandate</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    No iced drinks or cold raw salads. The body lost significant heat during labor. Sip hot ginger teas, consume simmering marrow broths.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">03</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">Companion Action Point</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    Your concierge can enforce a gentle "Do Not Disturb" protocol for your doorstep so visitors don't wake the household.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 2 -->
+            <div id="fw-content-days-3-4" class="fw-tab-content hidden space-y-6">
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">01</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">Milk Arrives, Tears Flow</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    Estrogen and progesterone plunge rapidly. Crying without a discernible cause is physiologically normal. You are not broken.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">02</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">Engorgement Relief</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    Gentle lymph massage toward the armpits, never hard kneading. Warm compresses before feeding, cold compresses after.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">03</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">Companion Action Point</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    Text the concierge: “Lactation check.” We match an in-person or encrypted video consult within hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 3 -->
+            <div id="fw-content-days-5-7" class="fw-tab-content hidden space-y-6">
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">01</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">The Visitors Buffer</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    If someone visits to hold the baby while you do chores, decline. True visitors should wash a dish, bring a stew, and leave quietly.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">02</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">First Fresh Air</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    Five minutes sitting on a porch chair under daylight is enough. Do not march around the neighborhood just yet.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="font-serif text-3xl text-plum font-light">03</span>
+                <div>
+                  <h4 class="font-serif text-xl text-charcoal">Companion Action Point</h4>
+                  <p class="text-xs sm:text-sm text-charcoalSoft font-light mt-1 leading-relaxed">
+                    Let us arrange your linen pickup so you don't face a mountain of laundry over the weekend.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= DATA, ON HER TERMS (PRIVACY & HUMAN DIGNITY) ================= -->
+    <section id="ethics" class="py-24 lg:py-32 px-6 lg:px-12 bg-linen">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="max-w-2xl mb-16">
+          <span class="text-xs font-sans uppercase tracking-spacious text-moss font-semibold">Human Consent Architecture</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mt-2 mb-4">
+            Data, strictly on her terms.
+          </h2>
+          <p class="text-charcoalSoft font-light text-base leading-relaxed">
+            New parents are ruthlessly monetized by algorithms and baby tracking tech. We take a radically quiet stand: zero surveillance, zero third-party brokers, zero marketing blasts.
+          </p>
+        </div>
+
+        <!-- 4-Stage Human Reassurance Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <div class="p-6 rounded-2xl bg-stoneWarm/50 border border-borderSubtle">
+            <span class="text-xs font-mono uppercase tracking-widest text-plum mb-3 block">01 / You Choose</span>
+            <h4 class="font-serif text-2xl text-charcoal font-normal mb-2">Consent First</h4>
+            <p class="text-xs text-charcoalSoft font-light leading-relaxed">
+              She dictates how we communicate: WhatsApp, simple SMS, email, or solely through a designated partner. If she asks for silence, we go silent.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-stoneWarm/50 border border-borderSubtle">
+            <span class="text-xs font-mono uppercase tracking-widest text-plum mb-3 block">02 / We Understand</span>
+            <h4 class="font-serif text-2xl text-charcoal font-normal mb-2">Context, Not Data</h4>
+            <p class="text-xs text-charcoalSoft font-light leading-relaxed">
+              We remember her dietary aversions, birth recovery nuances, and preferred nap hours so she never repeats herself. It is never sold or modeled.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-stoneWarm/50 border border-borderSubtle">
+            <span class="text-xs font-mono uppercase tracking-widest text-plum mb-3 block">03 / Care Adapts</span>
+            <h4 class="font-serif text-2xl text-charcoal font-normal mb-2">Dynamic Cadence</h4>
+            <p class="text-xs text-charcoalSoft font-light leading-relaxed">
+              If recovery is easy, care spaces out. If mastitis or sleep deprivation hits, our support intensifies gently to absorb the blow.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-stoneWarm/50 border border-borderSubtle">
+            <span class="text-xs font-mono uppercase tracking-widest text-plum mb-3 block">04 / Absolute Control</span>
+            <h4 class="font-serif text-2xl text-charcoal font-normal mb-2">Permanent Wipe</h4>
+            <p class="text-xs text-charcoalSoft font-light leading-relaxed">
+              When her postpartum companion window concludes, her communication history and private preferences can be purged with a single request.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EDITORIAL VOICES & TRUST ================= -->
+    <section class="py-24 lg:py-32 px-6 lg:px-12 bg-stoneWarm/60 border-t border-b border-borderSubtle">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-xl mx-auto mb-16">
+          <span class="text-xs uppercase tracking-spacious text-sandMuted font-semibold">Voices From The Fourth Trimester</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-charcoal mt-2">Echoes of Real Relief</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-linen p-8 rounded-2xl border border-borderSubtle flex flex-col justify-between">
+            <blockquote class="font-serif text-lg text-charcoal font-normal italic leading-relaxed mb-6">
+              “Everyone bought onsies and silver rattles. My best friend sent Mother’s Gift. When day four hit and my milk came in painfully, having an IBCLC show up without me researching a single Yelp review saved me.”
+            </blockquote>
+            <div class="border-t border-borderSubtle pt-4">
+              <p class="text-xs font-semibold text-charcoal">Clara Mendez</p>
+              <p class="text-[11px] text-sandMuted uppercase tracking-quiet">Mother of Julian · Austin, TX</p>
+            </div>
+          </div>
+
+          <div class="bg-linen p-8 rounded-2xl border border-borderSubtle flex flex-col justify-between">
+            <blockquote class="font-serif text-lg text-charcoal font-normal italic leading-relaxed mb-6">
+              “As an obstetrician, I see mothers being discharged with zero infrastructure. Mother’s Gift is the first gift model that treats maternal convalescence as sacred medical necessity rather than consumer fluff.”
+            </blockquote>
+            <div class="border-t border-borderSubtle pt-4">
+              <p class="text-xs font-semibold text-charcoal">Dr. Aris Thorne, MD</p>
+              <p class="text-[11px] text-sandMuted uppercase tracking-quiet">OB/GYN & Maternal Health Advocate</p>
+            </div>
+          </div>
+
+          <div class="bg-linen p-8 rounded-2xl border border-borderSubtle flex flex-col justify-between">
+            <blockquote class="font-serif text-lg text-charcoal font-normal italic leading-relaxed mb-6">
+              “Our whole creative studio chipped into The Village Circle for our director when she gave birth. She said the hot broths and folded laundry kept her marriage buoyant in the darkest sleep weeks.”
+            </blockquote>
+            <div class="border-t border-borderSubtle pt-4">
+              <p class="text-xs font-semibold text-charcoal">Marcus Vance</p>
+              <p class="text-[11px] text-sandMuted uppercase tracking-quiet">Colleague & Circle Organizer</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONCISE FAQ ================= -->
+    <section class="py-24 lg:py-32 px-6 lg:px-12 max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-xs font-sans uppercase tracking-spacious text-sandMuted font-semibold">Inquiries Answered</span>
+        <h2 class="font-serif text-4xl text-charcoal font-normal mt-2">Questions Regarding The Ritual</h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="border border-borderSubtle rounded-xl p-6 bg-linen">
+          <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left">
+            <span class="font-serif text-xl text-charcoal font-normal">What if her delivery date is early or delayed?</span>
+            <span class="text-xl text-sandMuted transition-transform duration-300 font-light">+</span>
+          </button>
+          <div class="hidden text-charcoalSoft text-xs sm:text-sm font-light mt-4 pt-4 border-t border-borderSubtle leading-relaxed">
+            Nature does not follow shipping schedules. The physical box can be dispatched upon purchase or held indefinitely until the partner or mother sends a simple note: “She is in labor.” Companion care initiates whenever they are ready.
+          </div>
+        </div>
+
+        <div class="border border-borderSubtle rounded-xl p-6 bg-linen">
+          <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left">
+            <span class="font-serif text-xl text-charcoal font-normal">Does the mother have to download an application?</span>
+            <span class="text-xl text-sandMuted transition-transform duration-300 font-light">+</span>
+          </button>
+          <div class="hidden text-charcoalSoft text-xs sm:text-sm font-light mt-4 pt-4 border-t border-borderSubtle leading-relaxed">
+            Never. We refuse to add another app notification to an exhausted mother’s lock screen. Everything is conducted via quiet SMS text, encrypted WhatsApp, or email directly with her dedicated care coordinator.
+          </div>
+        </div>
+
+        <div class="border border-borderSubtle rounded-xl p-6 bg-linen">
+          <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left">
+            <span class="font-serif text-xl text-charcoal font-normal">What if she lives in a rural area or smaller town?</span>
+            <span class="text-xl text-sandMuted transition-transform duration-300 font-light">+</span>
+          </button>
+          <div class="hidden text-charcoalSoft text-xs sm:text-sm font-light mt-4 pt-4 border-t border-borderSubtle leading-relaxed">
+            Physical items and chef-made frozen nourishment broths ship anywhere nationally. If in-person lactation or bodywork specialists are unavailable locally, credits seamlessly convert to virtual IBCLC consultations or extended nourishment deliveries.
+          </div>
+        </div>
+
+        <div class="border border-borderSubtle rounded-xl p-6 bg-linen">
+          <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left">
+            <span class="font-serif text-xl text-charcoal font-normal">Can several people contribute together?</span>
+            <span class="text-xl text-sandMuted transition-transform duration-300 font-light">+</span>
+          </button>
+          <div class="hidden text-charcoalSoft text-xs sm:text-sm font-light mt-4 pt-4 border-t border-borderSubtle leading-relaxed">
+            Yes. Our Circle Care tool lets colleagues, siblings, and friend groups pool contributions with custom notes compiled into one beautiful letterpress keepsake card.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= COMPACT CONTACT & INTEGRATED SECONDARY GOOGLE MAP ================= -->
+    <section class="py-20 lg:py-28 px-6 lg:px-12 bg-stoneWarm border-t border-borderSubtle">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Contact Concierge Details -->
+          <div class="lg:col-span-6 space-y-6">
+            <div>
+              <span class="text-xs uppercase tracking-spacious text-sandMuted font-semibold">Quiet Atelier & Sanctuary</span>
+              <h2 class="font-serif text-3xl sm:text-4xl text-charcoal font-normal mt-2">
+                Talk with our Concierge Director
+              </h2>
+              <p class="text-charcoalSoft font-light text-sm mt-2 max-w-md">
+                Have specific postpartum dietary considerations or wish to customize a bespoke circle package? Our team responds within a few quiet hours.
+              </p>
+            </div>
+
+            <div class="space-y-3 text-xs text-charcoalSoft">
+              <p class="flex items-center gap-3">
+                <span class="font-mono text-sandMuted uppercase tracking-wider w-20">Atelier:</span>
+                <span>482 Mercer Street, Soho, New York, NY 10013</span>
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="font-mono text-sandMuted uppercase tracking-wider w-20">Concierge:</span>
+                <span class="text-charcoal font-medium">care@mothersgift.co</span>
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="font-mono text-sandMuted uppercase tracking-wider w-20">Hours:</span>
+                <span>Monday – Saturday · 8am – 7pm EST (Emergency doula dispatch on-call 24/7)</span>
+              </p>
+            </div>
+
+            <!-- Mini contact form -->
+            <form onsubmit="handleContactSubmit(event)" class="pt-4 space-y-3 max-w-md">
+              <div class="flex gap-2">
+                <input 
+                  type="email" 
+                  placeholder="Your email address" 
+                  required
+                  class="bg-linen border border-borderSubtle px-4 py-2.5 text-xs text-charcoal rounded-full flex-grow focus:outline-none focus:border-plum"
+                />
+                <button type="submit" class="bg-charcoal text-linen text-xs uppercase tracking-quiet px-6 py-2.5 rounded-full hover:bg-plum transition-colors font-medium">
+                  Connect
+                </button>
+              </div>
+              <p id="contact-feedback" class="text-[11px] text-moss hidden">Thank you. Elena from our concierge will write quietly to you today.</p>
+            </form>
+          </div>
+
+          <!-- Integrated Subtle Google Map (Calm, Secondary, Non-Intrusive) -->
+          <div class="lg:col-span-6">
+            <div class="rounded-2xl overflow-hidden border border-borderSubtle bg-linen shadow-sm p-2">
+              <div class="h-64 sm:h-72 w-full rounded-xl overflow-hidden filter grayscale contrast-125 opacity-90 relative">
+                <iframe 
+                  title="Mother's Gift Atelier Map Location"
+                  width="100%" 
+                  height="100%" 
+                  frameborder="0" 
+                  scrolling="no" 
+                  marginheight="0" 
+                  marginwidth="0" 
+                  src="https://maps.google.com/maps?q=482%20Mercer%20Street%20New%20York%20NY%2010013&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  class="w-full h-full border-0 pointer-events-none sm:pointer-events-auto"
+                ></iframe>
+                <!-- Subtle brand badge over map -->
+                <div class="absolute bottom-3 left-3 bg-linen/95 backdrop-blur-sm px-3 py-1.5 rounded-md border border-borderSubtle text-[10px] text-charcoal font-medium">
+                  Mother's Gift Atelier · NYC
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= EDITORIAL FOOTER ================= -->
+  <footer class="bg-charcoal text-linen py-20 px-6 lg:px-12 border-t border-linen/10">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-linen/10">
+        
+        <!-- Brand column -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-7 h-7 rounded-full border border-linen/40 flex items-center justify-center text-xs font-serif italic text-linen">m</span>
+            <span class="font-serif text-2xl tracking-tight text-linen">Mother’s Gift</span>
+          </div>
+          <p class="text-stoneDark/70 text-xs font-light max-w-sm leading-relaxed mb-6">
+            A physical gift that quietly becomes ongoing postpartum care. Dedicated to the dignity, recovery, and quiet sanctuary of new mothers everywhere.
+          </p>
+          <p class="text-[11px] text-sandMuted">
+            Curated in collaboration with certified doulas, lactation consultants (IBCLC), and clinical maternal care partners.
+          </p>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h5 class="text-xs font-mono uppercase tracking-spacious text-sandMuted mb-4">The Offerings</h5>
+          <ul class="space-y-2 text-xs text-stoneDark/80 font-light">
+            <li><a href="#packages" class="hover:text-linen transition-colors">The First Forty</a></li>
+            <li><a href="#packages" class="hover:text-linen transition-colors">The Fourth Trimester</a></li>
+            <li><a href="#packages" class="hover:text-linen transition-colors">The Village Circle</a></li>
+            <li><a href="#care-balance" class="hover:text-linen transition-colors">Collective Gift Funds</a></li>
+            <li><a href="#first-week-check" class="hover:text-linen transition-colors">First Week Check Protocol</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div>
+          <h5 class="text-xs font-mono uppercase tracking-spacious text-sandMuted mb-4">Philosophy & Dignity</h5>
+          <ul class="space-y-2 text-xs text-stoneDark/80 font-light">
+            <li><a href="#how-it-works" class="hover:text-linen transition-colors">The Ritual Flow</a></li>
+            <li><a href="#ethics" class="hover:text-linen transition-colors">Zero-Surveillance Privacy</a></li>
+            <li><a href="#ethics" class="hover:text-linen transition-colors">The Doula Network</a></li>
+            <li><a href="#storyboard" class="hover:text-linen transition-colors">Postpartum Principles</a></li>
+            <li><a href="#" class="hover:text-linen transition-colors">Gift Registry Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 3 / Newsletter -->
+        <div>
+          <h5 class="text-xs font-mono uppercase tracking-spacious text-sandMuted mb-4">Quiet Letters</h5>
+          <p class="text-xs text-stoneDark/70 mb-3 font-light">A monthly essay on maternal sanctuary. No marketing blitz.</p>
+          <div class="flex flex-col gap-2">
+            <input 
+              type="email" 
+              placeholder="Your email address" 
+              class="bg-linen/5 border border-linen/15 px-3 py-2 text-xs text-linen rounded-md focus:outline-none focus:border-plum"
+            />
+            <button class="bg-plum hover:bg-plumLight text-linen text-xs uppercase tracking-quiet py-2 rounded-md font-medium transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-sandMuted font-light">
+        <p>© 2026 Mother’s Gift Co. All rights reserved. Developed by Md.Mahbubur Rahman.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-linen">Privacy Charter</a>
+          <a href="#" class="hover:text-linen">Terms of Dignity</a>
+          <a href="#" class="hover:text-linen">Accessibility</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= 6-STEP GIFT PURCHASE EXPERIENCE MODAL ================= -->
+  <div id="gift-modal" class="fixed inset-0 z-50 bg-charcoal/60 backdrop-blur-sm hidden items-center justify-center p-4 sm:p-6 transition-all duration-300">
+    <div class="bg-linen w-full max-w-3xl rounded-3xl border border-borderSubtle shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+      
+      <!-- Modal Header & Progress Indicator -->
+      <div class="p-6 border-b border-borderSubtle bg-stoneWarm flex items-center justify-between">
+        <div>
+          <span class="text-[10px] uppercase font-mono tracking-spacious text-sandMuted block">Curate a Sanctuary Offering</span>
+          <h3 class="font-serif text-2xl text-charcoal font-normal" id="modal-step-title">Step 1: The Mother</h3>
+        </div>
+        <div class="flex items-center gap-4">
+          <!-- Step Count Indicator -->
+          <span class="text-xs font-mono text-sandMuted" id="modal-step-indicator">1 of 6</span>
+          <button onclick="closeGiftModal()" class="w-8 h-8 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-linen transition-colors">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Visible Editorial Progress Line -->
+      <div class="w-full bg-borderSubtle h-1">
+        <div id="modal-progress-bar" class="h-1 bg-plum transition-all duration-300 w-1/6"></div>
+      </div>
+
+      <!-- Modal Body (Steps Container) -->
+      <div class="p-6 sm:p-8 overflow-y-auto flex-grow">
+        
+        <!-- STEP 1: RECIPIENT -->
+        <div id="step-1" class="gift-step">
+          <p class="text-sm text-charcoalSoft font-light mb-6">Who are we caring for? We only need basic details to prepare her dedicated coordinator.</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">Mother’s Full Name</label>
+              <input type="text" id="gift-recipient-name" placeholder="e.g., Clara Holloway" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">Her Preferred Contact (Phone or Email)</label>
+                <input type="text" id="gift-recipient-contact" placeholder="+1 (555) 000-0000" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">Estimated Due Date / Birth Date</label>
+                <input type="date" id="gift-birth-date" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum text-charcoal" />
+              </div>
+            </div>
+            <p class="text-[11px] text-sandMuted italic">She will never receive marketing communications or unsolicited spam.</p>
+          </div>
+        </div>
+
+        <!-- STEP 2: PACKAGE CHOICE -->
+        <div id="step-2" class="gift-step hidden">
+          <p class="text-sm text-charcoalSoft font-light mb-6">Select the depth of ongoing companion care for her recovery.</p>
+          <div class="space-y-3">
+            <label class="flex items-start gap-4 p-4 rounded-xl border border-borderSubtle bg-stoneWarm/50 hover:border-plum cursor-pointer transition-all">
+              <input type="radio" name="pkg-choice" value="The First Forty" class="mt-1 text-plum focus:ring-plum" checked />
+              <div>
+                <div class="flex justify-between items-center">
+                  <span class="font-serif text-lg text-charcoal">The First Forty</span>
+                  <span class="text-xs font-mono text-sandMuted">2 Weeks Support</span>
+                </div>
+                <p class="text-xs text-charcoalSoft font-light mt-1">Arrival physical recovery box + 2 weeks of dedicated SMS concierge broth/errand coordination.</p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-plum bg-linen hover:border-plum cursor-pointer transition-all">
+              <input type="radio" name="pkg-choice" value="The Fourth Trimester" class="mt-1 text-plum focus:ring-plum" />
+              <div>
+                <div class="flex justify-between items-center">
+                  <span class="font-serif text-lg text-plum font-medium">The Fourth Trimester (Signature)</span>
+                  <span class="text-xs font-mono text-plum">6 Weeks Support</span>
+                </div>
+                <p class="text-xs text-charcoalSoft font-light mt-1">Complete apothecary box, 6 weeks concierge, 4 restorative home dinner credits, lactation buffer.</p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-4 p-4 rounded-xl border border-borderSubtle bg-stoneWarm/50 hover:border-plum cursor-pointer transition-all">
+              <input type="radio" name="pkg-choice" value="The Village Circle" class="mt-1 text-plum focus:ring-plum" />
+              <div>
+                <div class="flex justify-between items-center">
+                  <span class="font-serif text-lg text-charcoal">The Village Circle</span>
+                  <span class="text-xs font-mono text-sandMuted">12 Weeks Collective</span>
+                </div>
+                <p class="text-xs text-charcoalSoft font-light mt-1">Heirloom textiles, full postpartum quarter support, in-home doula & laundry assistance.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- STEP 3: PERSONAL MESSAGE -->
+        <div id="step-3" class="gift-step hidden">
+          <p class="text-sm text-charcoalSoft font-light mb-6">Your words are embossed onto heavy deckled cotton stationery inside her arrival box.</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">Your Handwritten Letter</label>
+              <textarea id="gift-message-text" rows="5" placeholder="Dearest Clara, may this vessel remind you that you are held while you hold your child. We are standing quietly beside you..." class="w-full bg-stoneWarm border border-borderSubtle rounded-xl p-4 text-sm focus:outline-none focus:border-plum font-serif text-charcoal"></textarea>
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">Signed From</label>
+              <input type="text" id="gift-sender-name" placeholder="With deep love, Aunt Sarah & Liam" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum" />
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: DELIVERY DETAILS -->
+        <div id="step-4" class="gift-step hidden">
+          <p class="text-sm text-charcoalSoft font-light mb-6">Where should the physical box arrive?</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">Street Address</label>
+              <input type="text" id="gift-address" placeholder="742 Evergreen Terrace, Apt 3B" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum" />
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">City</label>
+                <input type="text" id="gift-city" placeholder="Portland" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">State / Province</label>
+                <input type="text" id="gift-state" placeholder="OR" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum" />
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label class="block text-xs uppercase tracking-quiet font-medium text-charcoal mb-1">Zip Code</label>
+                <input type="text" id="gift-zip" placeholder="97201" class="w-full bg-stoneWarm border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-plum" />
+              </div>
+            </div>
+            <div class="p-3 bg-stoneWarm rounded-xl text-xs text-charcoalSoft flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-moss"></span>
+              <span>We never require a signature at the door to prevent ringing doorbells during baby sleep.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5: REVIEW / EDIT -->
+        <div id="step-5" class="gift-step hidden">
+          <p class="text-sm text-charcoalSoft font-light mb-6">Review your gift sanctuary commissioning before final confirmation.</p>
+          
+          <div class="bg-stoneWarm/70 rounded-2xl p-6 border border-borderSubtle space-y-4 text-xs">
+            <div class="flex justify-between pb-3 border-b border-borderSubtle">
+              <span class="text-sandMuted uppercase tracking-quiet">Recipient</span>
+              <span id="rev-recipient" class="font-medium text-charcoal">Clara Holloway</span>
+            </div>
+            <div class="flex justify-between pb-3 border-b border-borderSubtle">
+              <span class="text-sandMuted uppercase tracking-quiet">Chosen Offering</span>
+              <span id="rev-package" class="font-medium text-plum">The Fourth Trimester</span>
+            </div>
+            <div class="flex justify-between pb-3 border-b border-borderSubtle">
+              <span class="text-sandMuted uppercase tracking-quiet">Delivery Sanctuary</span>
+              <span id="rev-destination" class="font-medium text-charcoal">Portland, OR</span>
+            </div>
+            <div>
+              <span class="text-sandMuted uppercase tracking-quiet block mb-1">Letter Inscription</span>
+              <p id="rev-letter" class="italic font-serif text-sm text-charcoal bg-linen p-3 rounded-xl border border-borderSubtle">
+                “May this vessel remind you that you are held...”
+              </p>
+            </div>
+          </div>
+          <p class="text-[11px] text-sandMuted mt-4 text-center">She can swap, defer, or alter any element after arrival.</p>
+        </div>
+
+        <!-- STEP 6: CONFIRMATION -->
+        <div id="step-6" class="gift-step hidden text-center py-8">
+          <div class="w-16 h-16 rounded-full bg-moss/10 text-moss border border-moss/30 mx-auto flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-xs uppercase tracking-spacious text-moss font-semibold">Offering Confirmed</span>
+          <h3 class="font-serif text-3xl sm:text-4xl text-charcoal font-normal mt-2 mb-4">
+            Her sanctuary is set in motion.
+          </h3>
+          <p class="text-charcoalSoft text-sm font-light max-w-md mx-auto leading-relaxed mb-6">
+            An artisan letterpress confirmation has been sent to your email. Her box is being curated in our atelier with quiet reverence.
+          </p>
+          <div class="p-4 bg-stoneWarm rounded-xl max-w-sm mx-auto text-xs text-sandMuted">
+            Curator Reference Code: <strong class="text-charcoal font-mono">MG-8842-REST</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer Controls -->
+      <div class="p-6 border-t border-borderSubtle bg-stoneWarm flex justify-between items-center" id="modal-footer-nav">
+        <button id="modal-prev-btn" onclick="modalPrevStep()" class="text-xs uppercase tracking-quiet font-medium text-sandMuted hover:text-charcoal disabled:opacity-20" disabled>
+          ← Back
+        </button>
+        <button id="modal-next-btn" onclick="modalNextStep()" class="bg-plum hover:bg-plumLight text-linen text-xs uppercase tracking-spacious font-medium px-6 py-2.5 rounded-full transition-colors">
+          Continue
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= FIRST WEEK DRAWER MODAL ================= -->
+  <div id="first-week-drawer" class="fixed inset-0 z-50 bg-charcoal/60 backdrop-blur-sm hidden items-center justify-end transition-all duration-300">
+    <div class="bg-linen w-full max-w-lg h-full p-8 sm:p-12 overflow-y-auto flex flex-col justify-between border-l border-borderSubtle shadow-2xl">
+      <div>
+        <div class="flex justify-between items-center pb-6 border-b border-borderSubtle mb-8">
+          <span class="text-xs font-mono uppercase tracking-widest text-moss font-semibold">Postpartum Quick Reference</span>
+          <button onclick="closeFirstWeekDrawer()" class="text-xs font-mono uppercase text-sandMuted hover:text-charcoal">Close ✕</button>
+        </div>
+
+        <h3 class="font-serif text-3xl text-charcoal mb-4">The Mother’s Rule of Fives</h3>
+        
+        <div class="space-y-6 text-xs text-charcoalSoft font-light leading-relaxed">
+          <div class="p-4 rounded-xl bg-stoneWarm border border-borderSubtle">
+            <span class="font-serif text-base text-plum font-normal block mb-1">5 Days in Bed</span>
+            Resting horizontally. Baby skin-to-skin. Only standing to move to bathroom.
+          </div>
+
+          <div class="p-4 rounded-xl bg-stoneWarm border border-borderSubtle">
+            <span class="font-serif text-base text-plum font-normal block mb-1">5 Days Around the Bed</span>
+            Sitting in comfortable armchair, gentle nursing, warm bone broth by bedside.
+          </div>
+
+          <div class="p-4 rounded-xl bg-stoneWarm border border-borderSubtle">
+            <span class="font-serif text-base text-plum font-normal block mb-1">5 Days Near the Bed</span>
+            Moving to living room sofa. Still not lifting heavy laundry or vacuuming.
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-borderSubtle mt-8">
+        <button onclick="closeFirstWeekDrawer(); openGiftModal();" class="w-full py-3 rounded-full bg-plum text-linen text-xs uppercase tracking-spacious font-medium">
+          Send This Full Care To Her
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // --- Mobile Navigation Toggle ---
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('hidden');
+    }
+
+    // --- Storyboard Frame Switching ---
+    function setStoryboardFrame(frameIdx) {
+      // Buttons styling
+      for (let i = 0; i < 3; i++) {
+        const btn = document.getElementById(`sb-btn-${i}`);
+        const indicator = btn.querySelector('.sb-active-indicator');
+        const frame = document.getElementById(`sb-frame-${i}`);
+
+        if (i === frameIdx) {
+          btn.classList.add('bg-linen/5', 'border-linen/10');
+          btn.classList.remove('border-transparent');
+          indicator.classList.remove('hidden');
+          frame.classList.remove('hidden');
+        } else {
+          btn.classList.remove('bg-linen/5', 'border-linen/10');
+          btn.classList.add('border-transparent');
+          indicator.classList.add('hidden');
+          frame.classList.add('hidden');
+        }
+      }
+    }
+
+    // --- Package Details Expand / Collapse ---
+    function togglePackageDetails(id, btn) {
+      const el = document.getElementById(id);
+      const isHidden = el.classList.contains('hidden');
+      el.classList.toggle('hidden');
+      
+      const textSpan = btn.querySelector('span');
+      if (isHidden) {
+        textSpan.innerText = 'Hide customization options';
+      } else {
+        textSpan.innerText = 'View what she can change';
+      }
+    }
+
+    // --- First Week Tabs ---
+    function setFirstWeekTab(tabId) {
+      const tabs = ['days-1-2', 'days-3-4', 'days-5-7'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const content = document.getElementById(`fw-content-${t}`);
+        if (t === tabId) {
+          btn.classList.add('bg-plum', 'text-linen');
+          btn.classList.remove('text-charcoal', 'hover:bg-stoneWarm');
+          content.classList.remove('hidden');
+        } else {
+          btn.classList.remove('bg-plum', 'text-linen');
+          btn.classList.add('text-charcoal', 'hover:bg-stoneWarm');
+          content.classList.add('hidden');
+        }
+      });
+    }
+
+    // --- FAQ Accordions ---
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const plusIcon = button.querySelector('span:last-child');
+      const isHidden = answer.classList.contains('hidden');
+      
+      answer.classList.toggle('hidden');
+      plusIcon.textContent = isHidden ? '—' : '+';
+    }
+
+    // --- First Week Drawer ---
+    function openFirstWeekDrawer() {
+      const drawer = document.getElementById('first-week-drawer');
+      drawer.classList.remove('hidden');
+      drawer.classList.add('flex');
+    }
+
+    function closeFirstWeekDrawer() {
+      const drawer = document.getElementById('first-week-drawer');
+      drawer.classList.add('hidden');
+      drawer.classList.remove('flex');
+    }
+
+    // --- 6-Step Purchase Modal Management ---
+    let currentStep = 1;
+    const totalSteps = 6;
+    const stepTitles = [
+      "Step 1: The Mother",
+      "Step 2: Choose Offering",
+      "Step 3: Personal Inscription",
+      "Step 4: Delivery Sanctuary",
+      "Step 5: Review & Commission",
+      "Step 6: Sanctuary Initiated"
+    ];
+
+    function openGiftModal() {
+      currentStep = 1;
+      updateModalStepView();
+      const modal = document.getElementById('gift-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function openGiftModalWithPackage(packageName) {
+      openGiftModal();
+      // Set package selection
+      const radios = document.getElementsByName('pkg-choice');
+      for (let r of radios) {
+        if (r.value === packageName) {
+          r.checked = true;
+        }
+      }
+      currentStep = 2;
+      updateModalStepView();
+    }
+
+    function closeGiftModal() {
+      const modal = document.getElementById('gift-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function modalNextStep() {
+      if (currentStep < totalSteps) {
+        // Prepare step 5 review data if advancing to step 5
+        if (currentStep === 4) {
+          const name = document.getElementById('gift-recipient-name').value || 'Clara Holloway';
+          const pkg = document.querySelector('input[name="pkg-choice"]:checked')?.value || 'The Fourth Trimester';
+          const city = document.getElementById('gift-city').value || 'Portland';
+          const state = document.getElementById('gift-state').value || 'OR';
+          const msg = document.getElementById('gift-message-text').value || 'May this vessel remind you that you are held while you hold your child...';
+
+          document.getElementById('rev-recipient').textContent = name;
+          document.getElementById('rev-package').textContent = pkg;
+          document.getElementById('rev-destination').textContent = `${city}, ${state}`;
+          document.getElementById('rev-letter').textContent = `“${msg}”`;
+        }
+
+        currentStep++;
+        updateModalStepView();
+      } else {
+        closeGiftModal();
+      }
+    }
+
+    function modalPrevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        updateModalStepView();
+      }
+    }
+
+    function updateModalStepView() {
+      // Update titles & counter
+      document.getElementById('modal-step-title').textContent = stepTitles[currentStep - 1];
+      document.getElementById('modal-step-indicator').textContent = `${currentStep} of ${totalSteps}`;
+      
+      // Update progress bar
+      const pct = (currentStep / totalSteps) * 100;
+      document.getElementById('modal-progress-bar').style.width = `${pct}%`;
+
+      // Toggle step visibility
+      for (let i = 1; i <= totalSteps; i++) {
+        const el = document.getElementById(`step-${i}`);
+        if (i === currentStep) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      }
+
+      // Button states
+      const prevBtn = document.getElementById('modal-prev-btn');
+      const nextBtn = document.getElementById('modal-next-btn');
+
+      if (currentStep === 1) {
+        prevBtn.setAttribute('disabled', 'true');
+      } else {
+        prevBtn.removeAttribute('disabled');
+      }
+
+      if (currentStep === 5) {
+        nextBtn.textContent = "Confirm & Dispatch Care";
+      } else if (currentStep === 6) {
+        prevBtn.style.display = 'none';
+        nextBtn.textContent = "Close Window";
+      } else {
+        prevBtn.style.display = 'inline-block';
+        nextBtn.textContent = "Continue";
+      }
+    }
+
+    // --- Contact Form Submission Simulation ---
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('contact-feedback');
+      feedback.classList.remove('hidden');
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
